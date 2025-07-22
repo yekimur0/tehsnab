@@ -1,0 +1,44 @@
+.tabout {
+  margin-bottom: 80px;
+  .tabout-title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 133%;
+    color: #333;
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    li {
+      b {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 100%;
+        color: #333;
+        display: block;
+      }
+      a {
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #1775a9;
+      }
+    }
+  }
+}

@@ -1,0 +1,423 @@
+@import './components/t-banner.css';
+@import './components/t-catalog.css';
+@import './components/t-brand.css';
+@import './components/t-trusted.css';
+@import './components/t-articles.css';
+@import './components/t-about.css';
+@import './components/t-contacts.css';
+@import './components/t-popular.css';
+* {
+  box-sizing: border-box;
+}
+
+/* Это можно использовать в проекте */
+:root {
+  --font-family: 'Roboto', sans-serif;
+
+  --black: #000;
+  --white: #fff;
+}
+
+/* ЭТО ПРОСТО ДЛЯ СЕБЯ НЕ НАДО КОПИРОВАТЬ В ПРОЕКТ */
+
+body {
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--black);
+  height: 100%;
+  margin: 0;
+}
+
+/* ------ */
+
+/* я использую контейнер, на сайте вроде нигде не используется этот класс */
+.container {
+  max-width: 1140px;
+  min-width: 320px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.footer {
+  background: #696969;
+  padding-block: 40px;
+
+  .footer-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .footer-col {
+    display: flex;
+    flex-direction: column;
+  }
+  .footer-logo {
+    display: block;
+    margin-bottom: 8px;
+  }
+  .logo-desc {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 12px;
+    letter-spacing: 0.07em;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .xl-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 150%;
+    text-align: right;
+    color: #fff;
+    text-decoration: underline;
+    transition: opacity 0.3s ease;
+    will-change: opacity;
+    @media (any-hover: hover) {
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+    &:before {
+      content: '';
+      min-width: 24px;
+      height: 24px;
+      background: url('../img/icon-xl.png') no-repeat;
+    }
+  }
+
+  .footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    .footer-nav-title {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: 20px;
+      letter-spacing: 0.05em;
+      color: #fff;
+    }
+    .footer-nav-list {
+      display: flex;
+      flex-direction: column;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      gap: 8px;
+      a {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 16px;
+        letter-spacing: 0.05em;
+        color: #fff;
+        transition: color 0.3s ease;
+        text-decoration: none;
+        @media (any-hover: hover) {
+          &:hover {
+            color: #c1e9ff;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-contacts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    .footer-contacts-block {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      span {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-family: var(--font-family);
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 150%;
+        color: #fff;
+      }
+      p {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        color: #fff;
+        margin: 0;
+      }
+      .link-map {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #fff;
+      }
+      .phone {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        color: #fff;
+        transition: color 0.3s ease;
+        text-decoration: none;
+        @media (any-hover: hover) {
+          &:hover {
+            color: #c1e9ff;
+          }
+        }
+      }
+      .link-mail {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 150%;
+        text-decoration: underline;
+        text-decoration-skip-ink: none;
+        color: #fff;
+        transition: color 0.3s ease;
+        @media (any-hover: hover) {
+          &:hover {
+            color: #c1e9ff;
+          }
+        }
+      }
+    }
+  }
+
+  .footer-bottom {
+    margin-top: 40px;
+
+    .footer-bottom-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      @media (max-width: 767px) {
+        align-items: flex-start;
+      }
+
+      a {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        color: #fff;
+        text-decoration: none;
+      }
+      p {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 169%;
+        color: #fff;
+        margin: 0;
+      }
+    }
+  }
+}
+
+/* catalog page */
+
+.tseo-catalog {
+  margin-bottom: 80px;
+
+  h2 {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 27px;
+    color: #333;
+    margin: 0;
+    margin-bottom: 14px;
+  }
+  p {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 133%;
+    color: #333;
+    margin: 0;
+    margin-bottom: 18px;
+  }
+
+  ol,
+  ul {
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+
+    li {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 15px;
+      line-height: 133%;
+      color: #000;
+      a {
+        color: #1775a9;
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+.tfos {
+  margin-bottom: 80px;
+  .tfos-wrapper {
+    border-radius: 4px;
+    padding: 20px;
+    background: #1775a9;
+
+    @media (max-width: 767px) {
+      padding: 20px 10px;
+    }
+  }
+  .tfos-title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 83%;
+    color: #fff;
+    margin-bottom: 8px;
+  }
+  .tfos-desc {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 15px;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .tfos-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    .tfos-form-row {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 8px;
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+      input {
+        border: none;
+        border-bottom: 1px solid #fff;
+        padding: 8px 24px;
+        outline: none;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 13px;
+        letter-spacing: 0.03em;
+        color: rgba(255, 255, 255, 0.9);
+        background: transparent;
+        &::placeholder {
+          color: #fff;
+        }
+      }
+      .btn-file {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 12px;
+        color: #fff;
+      }
+    }
+    .tfos-form-bottom {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      align-items: center;
+      margin-top: 20px;
+      @media (max-width: 767px) {
+        grid-template-columns: 1fr;
+      }
+      .tfos-form-btn {
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 120%;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        text-align: center;
+        color: #333;
+        border-radius: 2px;
+        padding: 12px 24px;
+        background: #fff;
+        text-decoration: none;
+        transition: 0.3s ease;
+        border: none;
+        cursor: pointer;
+        @media (any-hover: hover) {
+          &:hover {
+            background-color: #080808;
+            color: #fff;
+          }
+        }
+      }
+      .tfos-form-policy {
+        position: relative;
+        input {
+          position: absolute;
+          top: 0;
+          left: 0;
+          appearance: none;
+          opacity: 0;
+          -webkit-appearance: none;
+        }
+        label {
+          display: block;
+          font-family: var(--font-family);
+          font-weight: 400;
+          font-size: 13px;
+          color: #fff;
+          position: relative;
+          padding-left: 24px;
+          &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 2px;
+            border: 1px solid #fff;
+            width: 16px;
+            height: 16px;
+          }
+        }
+        input:checked + label:before {
+          background: url('../../img/checked.svg') center / contain no-repeat;
+        }
+      }
+    }
+  }
+}

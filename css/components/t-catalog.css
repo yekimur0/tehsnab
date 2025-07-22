@@ -1,0 +1,92 @@
+.tcatalog {
+  margin-bottom: 80px;
+  .tcatalog-title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 24px;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 40px;
+  }
+
+  .tcatalog-items-block {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    @media (max-width: 767px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .tcatalog-col {
+    display: grid;
+    gap: 10px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .tcatalog-item {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+    background: linear-gradient(
+      90deg,
+      rgba(225, 237, 243, 0.15) 0%,
+      rgba(23, 117, 169, 0.15) 100%
+    );
+    padding: clamp(10px, 2vw, 20px);
+    position: relative;
+    overflow: hidden;
+    min-height: 145px;
+    .tcatalog-item-title {
+      font-family: var(--font-family);
+      font-weight: 500;
+      font-size: clamp(14px, 2vw, 20px);
+      color: #333;
+      padding-bottom: 13%;
+      position: relative;
+      z-index: 1;
+      @media (max-width: 767px) {
+        max-width: 150px;
+      }
+    }
+    .tcatalog-item-img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      @media (max-width: 767px) {
+        max-width: 150px;
+      }
+      img {
+        display: block;
+        transition: scale 0.3s ease;
+      }
+    }
+
+    .tcatalog-item-link {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+    }
+    @media (any-hover: hover) {
+      &:hover {
+        img {
+          scale: 1.1;
+        }
+      }
+    }
+  }
+  .tcatalog-row {
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+
+    @media (max-width: 767px) {
+      grid-template-columns: repeat(2, 1fr);
+      .tcatalog-item:nth-child(1) {
+        grid-column: span 2;
+      }
+    }
+  }
+}
