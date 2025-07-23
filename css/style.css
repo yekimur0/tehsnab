@@ -6,6 +6,7 @@
 @import './components/t-about.css';
 @import './components/t-contacts.css';
 @import './components/t-popular.css';
+@import './components/t-filter.css';
 * {
   box-sizing: border-box;
 }

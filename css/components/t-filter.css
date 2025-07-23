@@ -1,0 +1,95 @@
+.tfilter {
+  margin-bottom: 80px;
+  .tfilter-inner {
+    border-radius: 4px;
+    padding: clamp(20px, 2.5vw, 40px);
+    background: #1775a9;
+    @media (max-width: 767px) {
+      padding: 20px 10px;
+    }
+  }
+  .tfilter-title {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: clamp(18px, 2.5vw, 24px);
+    line-height: 83%;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .tfilter-wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: end;
+    gap: 23px;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .tfilter-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-family: var(--font-family);
+      font-weight: 400;
+      font-size: 15px;
+      color: #fff;
+    }
+    .tfilter-block-inputs {
+      display: grid;
+      gap: 8px;
+      grid-template-columns: repeat(2, 1fr);
+      input {
+        border: none;
+        border-bottom: 1px solid #fff;
+        padding: 8px 24px;
+        outline: none;
+        font-family: var(--font-family);
+        font-weight: 400;
+        font-size: 13px;
+        letter-spacing: 0.03em;
+        color: rgba(255, 255, 255, 0.9);
+        background: transparent;
+        max-width: 121px;
+        &::placeholder {
+          color: inherit;
+        }
+        @media (max-width: 1200px) {
+          max-width: 100%;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .tfilter-btn {
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 120%;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    text-align: center;
+    color: #333;
+    border-radius: 2px;
+    padding: 12px 24px;
+    background: #fff;
+    text-decoration: none;
+    transition: 0.3s ease;
+    border: none;
+    cursor: pointer;
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+}
