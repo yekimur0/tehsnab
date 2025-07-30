@@ -128,3 +128,9 @@
 
     speed: 1500,
   });
+
+$(document).ready(function() {
+  $('#tselect').select2({
+    minimumResultsForSearch: Infinity 
+  });
+});
